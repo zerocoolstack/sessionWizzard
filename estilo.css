@@ -1,0 +1,142 @@
+.wrp-wizard {
+  width: 100%;
+  padding-top: 175px;
+}
+
+.progressbar {
+  position: relative;
+  padding: 0;
+  margin: 0;
+}
+
+.progressbar li {
+  list-style-type: none;
+  float: left;
+  /*width: 33.33%;*/
+  width: 19.33%;
+  position: relative;
+  text-align: center;
+}
+
+.progressbar li > * {
+  border: 1px dotted rgba(0, 0, 0, 0.18823529411764706);
+  position: relative;
+  padding: 5px 10px 5px 10px;
+  display: inline-block;
+  font-size: .9rem;
+  color: rgba(44, 63, 76, 0.6196078431372549);
+  top: -70px;
+  background-color: rgba(237, 239, 240, 0.61);
+}
+
+.progressbar li:before {
+  content: '';
+  width: 12px;
+  height: 12px;
+  display: block;
+  text-align:  center;
+  margin: 0 auto;
+  border-radius: 50%;
+  background-color: #edeff0;
+}
+  
+.progressbar li:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  background-color: #edeff0;
+  top: 4px;
+  left: -50%;
+  z-index: -1;
+}
+  
+.progressbar li:first-child:after {
+  content: none;
+}
+  
+.progressbar li.active span {
+  color: green;
+  background-color: rgba(0, 128, 0, 0.1);
+}
+
+.progressbar li.active:before {
+	background-color: green;
+	-webkit-transition: background 300ms ease;
+	transition: background 300ms ease;
+	-webkit-transition-delay: 300ms;
+	transition-delay: 300ms;
+}
+
+/*.progressbar li.active + li:after {
+  background-color: green;
+  width: 50%;
+}*/
+
+.progressbar li.active + li:after {
+   background: linear-gradient(to right, green 0%,green 50%,#edeff0 50%,#edeff0 100%)
+}
+
+.progressbar:after {
+  content: "";
+  height: 4px;
+  left: 16.666%;
+  background: green;
+  top: 4px;
+  position: absolute;
+  -webkit-transition: width 300ms ease;
+  transition: width 300ms ease;
+}
+
+.progressbar[data-active="1"]:after {
+  width: 0;
+}
+
+.progressbar[data-active="2"]:after {
+  width: 20%; /*33%*/
+}
+
+.progressbar[data-active="3"]:after {
+  width: 40%;
+}
+
+.progressbar[data-active="4"]:after {
+  width: 51%;
+}
+
+.progressbar:before {
+  content: url(assets/img/website/system/cart-icon.png);
+  margin-top: -20px;
+  margin-left: -88px; /*-11*/
+  left: 16.666%;
+  top: 4px;
+  position: absolute;
+  -webkit-transition: left 300ms ease;
+  transition: left 300ms ease;
+}
+
+.progressbar:not([data-active=""]):before {
+  opacity: 1;
+  -webkit-transition: left 2900ms ease, opacity 300ms ease;
+  transition: left 2900ms ease, opacity 300ms ease;
+}
+
+.progressbar[data-active="1"]:before {
+  left: 22.666%;
+}
+
+.progressbar[data-active="2"]:before {
+  left: 40%; /*left: 50%;*/
+}
+
+.progressbar[data-active="3"]:before {
+  left: 60.333%;
+}
+
+.progressbar[data-active="4"]:before {
+  left: 73.333%;
+}
+
+.progressbar[data-active=""]:before {
+  opacity: 0;
+}
